@@ -11,6 +11,8 @@ import json
 chrome_options = Options()
 # 谷歌文档提到需要加上这个属性来规避bug
 chrome_options.add_argument('-no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 # 隐藏滚动条, 应对一些特殊页面
 chrome_options.add_argument('--hide-scrollbars')

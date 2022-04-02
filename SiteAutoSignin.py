@@ -24,7 +24,7 @@ wd = webdriver.Chrome(options=chrome_options)
 wd.maximize_window()
 wd.implicitly_wait(5)
 wd.get('https://www.moe17.com/3496/')
-
+print(str(configs))
 login = wd.find_element(By.XPATH,'//*[@class="login-button"]/div[1]/button[1]')
 login.click()
 name = wd.find_element(By.XPATH,'//input[@tabindex="2"]')

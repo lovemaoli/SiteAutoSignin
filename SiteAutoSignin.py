@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 import time
 import os
 import json
+import requests
 
 chrome_options = Options()
 # 谷歌文档提到需要加上这个属性来规避bug

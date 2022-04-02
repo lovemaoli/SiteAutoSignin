@@ -39,4 +39,4 @@ jobs:
           TZ: Asia/Shanghai
           # 时区配置为Asia/Shanghai
       run: |
-        ./SiteAutoSignin.py
+        python SiteAutoSignin.py

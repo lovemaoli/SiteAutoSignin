@@ -5,8 +5,8 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import time
+import os
 import json
-import requests
 
 
 configs = json.loads(os.getenv("CONFIG"))
@@ -31,11 +31,27 @@ menu.click()
 try:
     sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
     sign.click()
+    time.sleep(1)
 except:
     print("moe17已签到")
 
-wd.get('https://rjhome.me/30638.html')
-
+try:
+    wd.get('https://rjhome.me/30638.html')
+    time.sleep(0.5)
+except:
+    try:
+        wd.get('https://rjhome.me/30638.html')
+        time.sleep(0.5)
+    except:
+        try:
+            wd.get('https://rjhome.me/30638.html')
+            time.sleep(0.5)
+        except:
+            try:
+                wd.get('https://rjhome.me/30638.html')
+                time.sleep(0.5)
+            except:
+                print("failed...")
 login = wd.find_element(By.XPATH,'//*[@class="login-button"]/div[1]/button[1]')
 login.click()
 name = wd.find_element(By.XPATH,'//input[@tabindex="2"]')
@@ -46,9 +62,12 @@ flogin = wd.find_element(By.XPATH,'//div[@class="login-bottom"][1]')
 flogin.click()
 time.sleep(2)
 
+menu = wd.find_element(By.XPATH,'//*[@class="bar-item bar-mission"]')
+menu.click()
 try:
     sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
     sign.click()
+    time.sleep(1)
 except:
     print("rjhome已签到")
 

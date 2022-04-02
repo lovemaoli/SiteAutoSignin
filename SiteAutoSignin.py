@@ -8,10 +8,15 @@ import time
 import os
 import json
 
+chrome_options = Options()
+# 谷歌文档提到需要加上这个属性来规避bug
+chrome_options.add_argument('--disable-gpu')
+# 隐藏滚动条, 应对一些特殊页面
+chrome_options.add_argument('--hide-scrollbars')
 
 configs = json.loads(os.getenv("CONFIG"))
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
-wd = webdriver.Chrome()
+wd = webdriver.Chrome(options=chrome_options)
 wd.maximize_window()
 wd.implicitly_wait(5)
 wd.get('https://www.moe17.com/3496/')

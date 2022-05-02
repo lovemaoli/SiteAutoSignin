@@ -9,10 +9,16 @@ import os
 import json
 import requests
 
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument("window-size=1024,768")
+chrome_options.add_argument("--no-sandbox")
+wd = webdriver.Chrome(chrome_options=chrome_options)
+
 
 configs = json.loads(os.getenv("CONFIG"))
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
-wd = webdriver.Chrome()
 wd.maximize_window()
 wd.implicitly_wait(5)
 wd.get('https://www.moe17.com/3496/')

@@ -17,7 +17,7 @@ chrome_options.add_argument("--no-sandbox")
 wd = webdriver.Chrome(chrome_options=chrome_options)
 
 
-# configs = json.loads(os.getenv("CONFIG"))
+configs = json.loads(os.getenv("CONFIG"))
 
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
 wd.maximize_window()

@@ -20,6 +20,8 @@ wd = webdriver.Chrome(chrome_options=chrome_options)
 configs = json.loads(os.getenv("CONFIG"))
 
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
+# moe
+
 wd.maximize_window()
 wd.implicitly_wait(5)
 wd.get('https://www.moe17.com/3496/')
@@ -43,6 +45,7 @@ try:
 except:
     print("moe17已签到")
 
+# rjhome 1
 try:
     wd.get('https://rjhome.me/30638.html')
     time.sleep(0.5)
@@ -80,6 +83,36 @@ try:
 except:
     print("rjhome已签到")
 
+# rjhome 2
+wd.refresh()
+time.sleep(1)
+exitrj = wd.find_element(By.XPATH,'//*[@id="page"]/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/picture/img')
+exitrj.click()
+time.sleep(0.5)
+exitlog = wd.find_element(By.XPATH,'//*[@id="page"]/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[2]/div/div[1]/div[2]/a/i')
+exitlog.click()
+time.sleep(0.5)
+login = wd.find_element(By.XPATH,'//*[@class="login-button"]/div[1]/button[1]')
+login.click()
+name = wd.find_element(By.XPATH,'//input[@tabindex="2"]')
+name.send_keys(configs["13"])
+pwd = wd.find_element(By.XPATH,'//input[@tabindex="4"][1]')
+pwd.send_keys(configs["14"])
+flogin = wd.find_element(By.XPATH,'//div[@class="login-bottom"][1]')
+flogin.click()
+time.sleep(2)
+
+menu = wd.find_element(By.XPATH,'//*[@class="bar-item bar-mission"]')
+menu.click()
+time.sleep(0.5)
+try:
+    sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
+    sign.click()
+    time.sleep(1)
+except:
+    print("rjhome已签到2")
+
+# ios
 wd.get('https://www.wanbianios.com/')
 time.sleep(0.5)
 try:

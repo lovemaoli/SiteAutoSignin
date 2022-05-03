@@ -72,6 +72,7 @@ time.sleep(2)
 
 menu = wd.find_element(By.XPATH,'//*[@class="bar-item bar-mission"]')
 menu.click()
+time.sleep(0.5)
 try:
     sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
     sign.click()
@@ -81,8 +82,17 @@ except:
 
 wd.get('https://www.wanbianios.com/')
 time.sleep(0.5)
-close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
-close_ad.click()
+try:
+    close_ad = wd.find_element(By.XPATH,"/html/body/div[2]/div/div[1]/button")
+    close_ad.click()
+except:
+    print("关闭失败 尝试第二次")
+    try:
+        close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+        close_ad.click()
+    except:
+        print("第二次仍失败 放弃关闭弹窗")
+time.sleep(0.5)
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
     login.click()
@@ -90,8 +100,10 @@ except:
     print("ios login出现问题 仍继续运行")
 name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
 name.send_keys(configs["5"])
+# name.send_keys("u51707683_mail@no.com")
 pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[4]/input')
 pwd.send_keys(configs["6"])
+# pwd.send_keys("021213")
 flogin = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/button')
 flogin.click()
 time.sleep(2)
@@ -103,4 +115,31 @@ try:
     sign.click()
     time.sleep(1)
 except:
-    print("ios已签到")
+    print("ios已签到1")
+# 开始第二个账号
+wd.get("https://www.wanbianios.com/user")
+exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+exit1.click()
+time.sleep(0.5)
+wd.get("https://www.wanbianios.com/")
+try:
+    login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
+    login.click()
+except:
+    print("ios login出现问题 仍继续运行")
+name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
+name.send_keys(configs["7"])
+pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[4]/input')
+pwd.send_keys(configs["8"])
+flogin = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/button')
+flogin.click()
+time.sleep(2)
+
+menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[3]')
+menu.click()
+try:
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-2"]/div/div[1]/div[3]/button')
+    sign.click()
+    time.sleep(1)
+except:
+    print("ios已签到2")

@@ -141,4 +141,60 @@ try:
     sign.click()
     time.sleep(1)
 except:
-    print("ios已签到2")
+    print("ios已签到3")
+# 开始第三个账号
+wd.get("https://www.wanbianios.com/user")
+time.sleep(2)
+exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+exit1.click()
+time.sleep(0.5)
+wd.get("https://www.wanbianios.com/")
+try:
+    login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
+    login.click()
+except:
+    print("ios login出现问题 仍继续运行")
+name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
+name.send_keys(configs["9"])
+pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[4]/input')
+pwd.send_keys(configs["10"])
+flogin = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/button')
+flogin.click()
+time.sleep(2)
+
+menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[3]')
+menu.click()
+try:
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-2"]/div/div[1]/div[3]/button')
+    sign.click()
+    time.sleep(1)
+except:
+    print("ios已签到3")
+# 开始第四个账号
+wd.get("https://www.wanbianios.com/user")
+time.sleep(2)
+exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+exit1.click()
+time.sleep(0.5)
+wd.get("https://www.wanbianios.com/")
+try:
+    login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
+    login.click()
+except:
+    print("ios login出现问题 仍继续运行")
+name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
+name.send_keys(configs["11"])
+pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[4]/input')
+pwd.send_keys(configs["12"])
+flogin = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/button')
+flogin.click()
+time.sleep(2)
+
+menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[3]')
+menu.click()
+try:
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-2"]/div/div[1]/div[3]/button')
+    sign.click()
+    time.sleep(1)
+except:
+    print("ios已签到4")

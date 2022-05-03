@@ -48,19 +48,19 @@ except:
 # rjhome 1
 try:
     wd.get('https://rjhome.me/30638.html')
-    time.sleep(0.5)
+    time.sleep(1)
 except:
     try:
         wd.get('https://rjhome.me/30638.html')
-        time.sleep(0.5)
+        time.sleep(1)
     except:
         try:
             wd.get('https://rjhome.me/30638.html')
-            time.sleep(0.5)
+            time.sleep(1)
         except:
             try:
                 wd.get('https://rjhome.me/30638.html')
-                time.sleep(0.5)
+                time.sleep(1)
             except:
                 print("failed...")
 login = wd.find_element(By.XPATH,'//*[@class="login-button"]/div[1]/button[1]')
@@ -75,7 +75,7 @@ time.sleep(2)
 
 menu = wd.find_element(By.XPATH,'//*[@class="bar-item bar-mission"]')
 menu.click()
-time.sleep(0.5)
+time.sleep(1)
 try:
     sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
     sign.click()
@@ -88,10 +88,10 @@ wd.refresh()
 time.sleep(1)
 exitrj = wd.find_element(By.XPATH,'//*[@id="page"]/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/picture/img')
 exitrj.click()
-time.sleep(0.5)
+time.sleep(1)
 exitlog = wd.find_element(By.XPATH,'//*[@id="page"]/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[2]/div/div[1]/div[2]/a/i')
 exitlog.click()
-time.sleep(0.5)
+time.sleep(1)
 login = wd.find_element(By.XPATH,'//*[@class="login-button"]/div[1]/button[1]')
 login.click()
 name = wd.find_element(By.XPATH,'//input[@tabindex="2"]')
@@ -104,7 +104,7 @@ time.sleep(2)
 
 menu = wd.find_element(By.XPATH,'//*[@class="bar-item bar-mission"]')
 menu.click()
-time.sleep(0.5)
+time.sleep(1)
 try:
     sign = wd.find_element(By.XPATH,'//*[@class="bar-user-info-row bar-mission-action"]')
     sign.click()
@@ -114,7 +114,7 @@ except:
 
 # ios
 wd.get('https://www.wanbianios.com/')
-time.sleep(0.5)
+time.sleep(1)
 try:
     close_ad = wd.find_element(By.XPATH,"/html/body/div[2]/div/div[1]/button")
     close_ad.click()
@@ -125,7 +125,7 @@ except:
         close_ad.click()
     except:
         print("第二次仍失败 放弃关闭弹窗")
-time.sleep(0.5)
+time.sleep(1)
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
     login.click()
@@ -149,10 +149,10 @@ except:
     print("ios已签到1")
 # 开始第二个账号
 wd.get("https://www.wanbianios.com/user")
-time.sleep(2)
+time.sleep(3)
 exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
 exit1.click()
-time.sleep(0.5)
+time.sleep(1)
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
@@ -177,10 +177,10 @@ except:
     print("ios已签到3")
 # 开始第三个账号
 wd.get("https://www.wanbianios.com/user")
-time.sleep(2)
+time.sleep(3)
 exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
 exit1.click()
-time.sleep(0.5)
+time.sleep(1)
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
@@ -205,10 +205,10 @@ except:
     print("ios已签到3")
 # 开始第四个账号
 wd.get("https://www.wanbianios.com/user")
-time.sleep(2)
+time.sleep(3)
 exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
 exit1.click()
-time.sleep(0.5)
+time.sleep(1)
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')

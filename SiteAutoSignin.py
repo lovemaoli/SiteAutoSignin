@@ -17,7 +17,8 @@ chrome_options.add_argument("--no-sandbox")
 wd = webdriver.Chrome(chrome_options=chrome_options)
 
 
-configs = json.loads(os.getenv("CONFIG"))
+# configs = json.loads(os.getenv("CONFIG"))
+
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
 wd.maximize_window()
 wd.implicitly_wait(5)
@@ -80,6 +81,8 @@ except:
 
 wd.get('https://www.wanbianios.com/')
 time.sleep(0.5)
+close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+close_ad.click()
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
     login.click()

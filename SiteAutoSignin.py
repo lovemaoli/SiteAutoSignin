@@ -80,9 +80,11 @@ except:
 
 wd.get('https://www.wanbianios.com/')
 time.sleep(0.5)
-
-login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]/i')
-login.click()
+try:
+    login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
+    login.click()
+except:
+    print("ios login出现问题 仍继续运行")
 name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
 name.send_keys(configs["5"])
 pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[4]/input')

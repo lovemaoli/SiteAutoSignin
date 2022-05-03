@@ -81,7 +81,7 @@ except:
 wd.get('https://www.wanbianios.com/')
 time.sleep(0.5)
 
-login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
+login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]/i')
 login.click()
 name = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[3]/input')
 name.send_keys(configs["5"])
@@ -99,6 +99,3 @@ try:
     time.sleep(1)
 except:
     print("ios已签到")
-
-# requests.post('http://120.77.39.85:8080/mail/daily_report', data=json.dumps(
-            # {"title": "账号22929292292929打卡成功", "body": "Test ^_^", "dest": "maoliloveyou@foxmail.com"}))

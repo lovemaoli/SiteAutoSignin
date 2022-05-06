@@ -21,7 +21,7 @@ configs = json.loads(os.getenv("CONFIG"))
 
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
 # moe
-
+print("moe1")
 wd.maximize_window()
 wd.implicitly_wait(5)
 wd.get('https://www.moe17.com/3496/')
@@ -46,6 +46,7 @@ except:
     print("moe17已签到")
 
 # rjhome 1
+print("rj1")
 try:
     wd.get('https://rjhome.me/30638.html')
     time.sleep(1)
@@ -84,6 +85,7 @@ except:
     print("rjhome已签到")
 
 # rjhome 2
+print("rj2")
 wd.refresh()
 time.sleep(1)
 exitrj = wd.find_element(By.XPATH,'//*[@id="page"]/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/picture/img')
@@ -150,9 +152,24 @@ except:
 # 开始第二个账号
 wd.get("https://www.wanbianios.com/user")
 time.sleep(3)
-exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
-exit1.click()
-time.sleep(1)
+try:
+    exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+    exit1.click()
+    time.sleep(1)
+except:
+    try:
+        print("账号2退出1次")
+        exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+        exit1.click()
+        time.sleep(1)
+    except:
+        try:
+            print("账号2退出2次")
+            exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+            exit1.click()
+            time.sleep(1)
+        except:
+            print("账号2退出3次仍失败")
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
@@ -178,9 +195,24 @@ except:
 # 开始第三个账号
 wd.get("https://www.wanbianios.com/user")
 time.sleep(3)
-exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
-exit1.click()
-time.sleep(1)
+try:
+    exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+    exit1.click()
+    time.sleep(1)
+except:
+    try:
+        print("账号3退出1次")
+        exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+        exit1.click()
+        time.sleep(1)
+    except:
+        try:
+            print("账号3退出2次")
+            exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+            exit1.click()
+            time.sleep(1)
+        except:
+            print("账号3退出3次仍失败")
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')
@@ -206,9 +238,24 @@ except:
 # 开始第四个账号
 wd.get("https://www.wanbianios.com/user")
 time.sleep(3)
-exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
-exit1.click()
-time.sleep(1)
+try:
+    exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+    exit1.click()
+    time.sleep(1)
+except:
+    try:
+        print("账号4退出1次")
+        exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+        exit1.click()
+        time.sleep(1)
+    except:
+        try:
+            print("账号4退出2次")
+            exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
+            exit1.click()
+            time.sleep(1)
+        except:
+            print("账号4退出3次仍失败")
 wd.get("https://www.wanbianios.com/")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div/div[4]/div[1]')

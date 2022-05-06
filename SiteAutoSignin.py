@@ -158,12 +158,16 @@ try:
     time.sleep(1)
 except:
     try:
+        wd.refresh()
+        time.sleep(3)
         print("账号2退出1次")
         exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
         exit1.click()
         time.sleep(1)
     except:
         try:
+            wd.get("https://www.wanbianios.com/user")
+            time.sleep(5)
             print("账号2退出2次")
             exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
             exit1.click()
@@ -201,12 +205,16 @@ try:
     time.sleep(1)
 except:
     try:
+        wd.get("https://www.wanbianios.com/user")
+        time.sleep(3)
         print("账号3退出1次")
         exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
         exit1.click()
         time.sleep(1)
     except:
         try:
+            wd.refresh()
+            time.sleep(5)
             print("账号3退出2次")
             exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
             exit1.click()
@@ -244,12 +252,16 @@ try:
     time.sleep(1)
 except:
     try:
+        wd.refresh()
+        time.sleep(5)
         print("账号4退出1次")
         exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
         exit1.click()
         time.sleep(1)
     except:
         try:
+            wd.get("https://www.wanbianios.com/user")
+            time.sleep(5)
             print("账号4退出2次")
             exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
             exit1.click()

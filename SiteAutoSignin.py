@@ -1,3 +1,4 @@
+import click
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -290,3 +291,21 @@ try:
     time.sleep(1)
 except:
     print("ios已签到4")
+
+# 光板小镇 账号1 试运行
+wd.get("https://www.clfans.club/")
+time.sleep(2)
+logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
+logintab.click()
+name = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[1]/input')
+name.send_keys(configs["15"])
+pwd = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[2]/input')
+pwd.send_keys(configs["16"])
+loginbottom = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[4]/button')
+loginbottom.click()
+time.sleep(5)
+wd.refresh()
+sign = wd.find_element(By.XPATH,'/html/body/main/div[2]/div[1]/div/div[2]/div/a/i')
+sign.click()
+time.sleep(3)
+print("krkr已签到")

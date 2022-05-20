@@ -293,9 +293,16 @@ except:
 
 # 光板小镇 账号1 试运行
 wd.get("https://www.clfans.club/")
-time.sleep(2)
-logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
-logintab.click()
+time.sleep(4)
+try:
+    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
+    logintab.click()
+except:
+    print("manu_find failed,refresh...")
+    wd.refresh()
+    time.sleep(10)
+    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
+    logintab.click()
 name = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[1]/input')
 name.send_keys(configs["15"])
 pwd = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[2]/input')

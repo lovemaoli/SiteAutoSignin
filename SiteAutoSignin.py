@@ -295,7 +295,7 @@ except:
 wd.get("https://www.clfans.club/")
 time.sleep(4)
 try:
-    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
+    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/a")
     logintab.click()
 except:
     print("manu_find failed,refresh...")

@@ -29,7 +29,7 @@ wd.implicitly_wait(5)
 wd.get("https://www.clfans.club/")
 time.sleep(4)
 try:
-    logintab = wd.find_element(By.XPATH,"/html/body/header/nav/div/div[2]/div[2]/ul/li[1]/a/svg")
+    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/a")
     logintab.click()
 except:
     print("manu_find failed,refresh...")

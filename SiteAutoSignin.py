@@ -298,13 +298,13 @@ except:
     wd.get("https://www.clfans.club/")
 time.sleep(4)
 try:
-    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/a")
+    logintab = wd.find_element(By.XPATH,"/html/body/header/nav/div/div[2]/div[2]/ul/li[1]/a/svg")
     logintab.click()
 except:
     print("manu_find failed,refresh...")
     wd.refresh()
     time.sleep(10)
-    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]/i")
+    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]")
     logintab.click()
 name = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[1]/input')
 name.send_keys(configs["15"])

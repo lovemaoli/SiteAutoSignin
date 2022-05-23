@@ -37,7 +37,12 @@ except:
         close_ad = wd.find_element(By.XPATH,"/html/body/div[2]/div/div[1]/button")
         close_ad.click()
     except:
-        print("第二次仍失败 放弃关闭弹窗")
+        try:
+            print("第三次尝试")
+            close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+            close_ad.click()
+        except:
+            print("第三次仍失败 放弃关闭弹窗")
 time.sleep(1)
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[1]')
@@ -109,30 +114,3 @@ try:
     time.sleep(1)
 except:
     print("ios已签到2")
-# 光板小镇 账号1 试运行
-try:
-    wd.get("https://www.clfans.club/")
-except:
-    wd.get("https://www.clfans.club/")
-time.sleep(4)
-try:
-    logintab = wd.find_element(By.XPATH,"/html/body/header/nav/div/div[2]/div[2]/ul/li[1]/a/svg")
-    logintab.click()
-except:
-    print("manu_find failed,refresh...")
-    wd.refresh()
-    time.sleep(10)
-    logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]")
-    logintab.click()
-name = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[1]/input')
-name.send_keys(configs["15"])
-pwd = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[2]/input')
-pwd.send_keys(configs["16"])
-loginbottom = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[4]/button')
-loginbottom.click()
-time.sleep(5)
-wd.refresh()
-sign = wd.find_element(By.XPATH,'/html/body/main/div[2]/div[1]/div/div[2]/div/a/i')
-sign.click()
-time.sleep(3)
-print("krkr已签到")

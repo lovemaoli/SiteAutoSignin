@@ -63,8 +63,17 @@ time.sleep(3)
 
 menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[3]')
 menu.click()
-sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
-sign.click()
+time.sleep(2)
+try:
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+    sign.click()
+except:
+    print("try to close ad for twice click")
+    close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+    close_ad.click()
+    time.sleep(1)
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+    sign.click()
 time.sleep(1)
 # huaxiashuyu 2
 wd.get("https://www.huaxiashuyu.com/user-2/")
@@ -109,7 +118,16 @@ time.sleep(2)
 
 menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[3]')
 menu.click()
-sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
-sign.click()
+time.sleep(2)
+try:
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+    sign.click()
+except:
+    print("try to close ad for twice click")
+    close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+    close_ad.click()
+    time.sleep(1)
+    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+    sign.click()
 time.sleep(1)
 print("ios已签到2")

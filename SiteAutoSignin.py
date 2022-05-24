@@ -47,7 +47,7 @@ except:
             close_ad.click()
         except:
             print("第三次仍失败 放弃关闭弹窗")
-time.sleep(1)
+time.sleep(3)
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[1]')
     login.click()
@@ -59,16 +59,13 @@ pwd = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/div[2]/input')
 pwd.send_keys(configs["18"])
 flogin = wd.find_element(By.XPATH,'//*[@id="login"]/div/form/button')
 flogin.click()
-time.sleep(2)
+time.sleep(3)
 
 menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[3]')
 menu.click()
-try:
-    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
-    sign.click()
-    time.sleep(1)
-except:
-    print("ios已签到1")
+sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+sign.click()
+time.sleep(1)
 # huaxiashuyu 2
 wd.get("https://www.huaxiashuyu.com/user-2/")
 time.sleep(3)
@@ -112,9 +109,7 @@ time.sleep(2)
 
 menu = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[3]')
 menu.click()
-try:
-    sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
-    sign.click()
-    time.sleep(1)
-except:
-    print("ios已签到2")
+sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
+sign.click()
+time.sleep(1)
+print("ios已签到2")

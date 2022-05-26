@@ -343,6 +343,13 @@ except:
 time.sleep(1)
 # huaxiashuyu 2
 wd.get("https://www.huaxiashuyu.com/user-2/")
+try:
+    print("try to close ad for twice click")
+    close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+    close_ad.click()
+    time.sleep(1)
+except:
+    print("there is nothing.")
 time.sleep(3)
 try:
     exit1 = wd.find_element(By.XPATH,'//*[@id="user-profile"]/div/div[1]/div[2]/ul/li[8]/a')
@@ -368,7 +375,26 @@ except:
             print("账号2退出3次仍失败")
 print("huaxiashuyu2")
 wd.get('https://www.huaxiashuyu.com/')
-time.sleep(1)
+time.sleep(5)
+try:
+    close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+    close_ad.click()
+except:
+    print("关闭失败 尝试第二次")
+    try:
+        wd.refresh()
+        time.sleep(4)
+        close_ad = wd.find_element(By.XPATH,"/html/body/div[2]/div/div[1]/button")
+        close_ad.click()
+    except:
+        try:
+            print("第三次尝试")
+            wd.get('https://www.huaxiashuyu.com/')
+            time.sleep(5)
+            close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
+            close_ad.click()
+        except:
+            print("第三次仍失败 放弃关闭弹窗")
 try:
     login = wd.find_element(By.XPATH,'/html/body/div[1]/header/div/div[4]/div[1]')
     login.click()

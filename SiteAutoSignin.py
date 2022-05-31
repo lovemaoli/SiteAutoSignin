@@ -643,6 +643,7 @@ while(1):
         exit()
     else:
         try:
+            wd.delete_all_cookies()
             work()
             p = 0
         except:

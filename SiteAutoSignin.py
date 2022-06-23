@@ -610,41 +610,6 @@ def work():
         except:
             print("ios已签到4")
         part4 = 1
-    
-    # 光板小镇 账号1 试运行
-    try:
-        wd.get("https://www.clfans.club/")
-    except:
-        wd.get("https://www.clfans.club/")
-    time.sleep(4)
-    try:
-        logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]")
-        logintab.click()
-    except:
-        try:
-            print("manu_find failed,refresh...")
-            wd.refresh()
-            time.sleep(10)
-            logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]")
-            logintab.click()
-        except:
-            print("manu_find failed2,refresh...")
-            wd.get("https://www.clfans.club/")
-            time.sleep(10)
-            logintab = wd.find_element(By.XPATH,"/html/body/main/div[2]/div[1]/div/div[2]/div/div[2]/div/p[2]/a[1]")
-            logintab.click()
-    name = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[1]/input')
-    name.send_keys(configs["15"])
-    pwd = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[2]/input')
-    pwd.send_keys(configs["16"])
-    loginbottom = wd.find_element(By.XPATH,'//*[@id="sign-in"]/form/div[4]/button')
-    loginbottom.click()
-    time.sleep(5)
-    wd.refresh()
-    sign = wd.find_element(By.XPATH,'/html/body/main/div[2]/div[1]/div/div[2]/div/a/i')
-    sign.click()
-    time.sleep(3)
-    print("krkr已签到")
 
 p = 50 # 设置失败重试次数
 while(1):

@@ -21,7 +21,7 @@ configs = json.loads(os.getenv("CONFIG"))
 wd.maximize_window()
 wd.implicitly_wait(20)
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
-part1 = 1;part2 = 1;part3 = 1;part4 = 1;part5 = 0
+part1 = 0;part2 = 0;part3 = 0;part4 = 0;part5 = 1
 def work():
     global part1,part2,part3,part4,part5
     if part1 == 0:
@@ -698,7 +698,6 @@ def work():
 
 
 p = 50 # 设置失败重试次数
-work()
 while(1):
     if(p == 0):
         exit()

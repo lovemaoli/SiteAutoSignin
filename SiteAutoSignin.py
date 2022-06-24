@@ -23,7 +23,7 @@ wd.implicitly_wait(5)
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
 part1 = 0;part2 = 0;part3 = 0;part4 = 0;part5 = 0
 def work():
-    global part1,part2,part3,part4
+    global part1,part2,part3,part4,part5
     if part1 == 0:
         # huaxiashuyu 1
         print("huaxiashuyu")
@@ -610,6 +610,82 @@ def work():
         except:
             print("ios已签到4")
         part4 = 1
+    if part5 == 0:
+        # baiwan
+        wd.get("https://www.baiwangame.com/")
+        login = wd.find_element(By.XPATH,'//*[@id="app"]/header/div/div/div[3]/a')
+        login.click()
+        time.sleep(5)
+        try:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["25"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["26"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        except:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["25"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["26"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        time.sleep(5)
+        wd.get("https://www.baiwangame.com/user")
+        time.sleep(3)
+        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+        sign.click()
+        wd.delete_all_cookies()
+        #baiwan2
+        wd.get("https://www.baiwangame.com/")
+        login = wd.find_element(By.XPATH,'//*[@id="app"]/header/div/div/div[3]/a')
+        login.click()
+        time.sleep(5)
+        try:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["27"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["28"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        except:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["27"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["28"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        time.sleep(5)
+        wd.get("https://www.baiwangame.com/user")
+        time.sleep(3)
+        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+        sign.click()
+        wd.delete_all_cookies()
+        #baiwan3
+        wd.get("https://www.baiwangame.com/")
+        login = wd.find_element(By.XPATH,'//*[@id="app"]/header/div/div/div[3]/a')
+        login.click()
+        time.sleep(5)
+        try:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["29"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["30"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[8]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        except:
+            loginname = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[1]/div/input')
+            loginname.send_keys(configs["29"])
+            loginpass = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[2]/div/input')
+            loginpass.send_keys(configs["30"])
+            confirm = wd.find_element(By.XPATH,'/html/body/div[7]/div/div[2]/form/div[3]/div[3]/button')
+            confirm.click()
+        time.sleep(5)
+        wd.get("https://www.baiwangame.com/user")
+        time.sleep(3)
+        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+        sign.click()
+
 
 p = 50 # 设置失败重试次数
 while(1):

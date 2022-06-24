@@ -687,7 +687,8 @@ def work():
         sign.click()
 
 
-p = 50 # 设置失败重试次数
+p = 10 # 设置失败重试次数
+work()
 while(1):
     if(p == 0):
         exit()
@@ -698,7 +699,7 @@ while(1):
             p = 0
         except:
             print("---------------------失败一次，尝试重新打卡！")
-            time.sleep(40)
+            time.sleep(5)
             p = p - 1
             if(p == 0):
                 print("重试五十次仍失败，请检查代码！")

@@ -25,6 +25,7 @@
 
 ## 更新日志
 
++ 2022/6/24 光板小镇加入验证码登陆 已取消相关功能（暂时不会处理验证码）
 + 2022/6/24 加入baiwangame
 + 2022/6/23 修正重试策略
 + 2022/5/31 修复bug 现在web driver可以删除cookie了
@@ -40,7 +41,7 @@
 1. wanbianios
 2. moe17
 3. rjhome
-4. clfans
+4. baiwan
 5. huaxia_ios
 
 

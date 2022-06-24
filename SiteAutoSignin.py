@@ -19,7 +19,7 @@ wd = webdriver.Chrome(chrome_options=chrome_options)
 
 configs = json.loads(os.getenv("CONFIG"))
 wd.maximize_window()
-wd.implicitly_wait(5)
+wd.implicitly_wait(20)
 # 创建 WebDriver 对象，指明使用chrome浏览器驱动
 part1 = 1;part2 = 1;part3 = 1;part4 = 1;part5 = 0
 def work():
@@ -335,6 +335,7 @@ def work():
         time.sleep(1)
         print("ios已签到4")
         part1 = 1
+    
     if part2 == 0:
         # moe
         print("moe1")
@@ -633,8 +634,11 @@ def work():
         time.sleep(5)
         wd.get("https://www.baiwangame.com/user")
         time.sleep(3)
-        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
-        sign.click()
+        try:
+            sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+            sign.click()
+        except:
+            print("baiwan1 signed.")
         wd.delete_all_cookies()
         #baiwan2
         wd.get("https://www.baiwangame.com/")
@@ -658,8 +662,11 @@ def work():
         time.sleep(5)
         wd.get("https://www.baiwangame.com/user")
         time.sleep(3)
-        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
-        sign.click()
+        try:
+            sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+            sign.click()
+        except:
+            print("baiwan1 signed.")
         wd.delete_all_cookies()
         #baiwan3
         wd.get("https://www.baiwangame.com/")
@@ -683,11 +690,14 @@ def work():
         time.sleep(5)
         wd.get("https://www.baiwangame.com/user")
         time.sleep(3)
-        sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
-        sign.click()
+        try:
+            sign = wd.find_element(By.XPATH,'//*[@id="main"]/div[2]/div/div[1]/div/div[1]/div/button')
+            sign.click()
+        except:
+            print("baiwan1 signed.")
 
 
-p = 10 # 设置失败重试次数
+p = 50 # 设置失败重试次数
 work()
 while(1):
     if(p == 0):
@@ -699,7 +709,7 @@ while(1):
             p = 0
         except:
             print("---------------------失败一次，尝试重新打卡！")
-            time.sleep(5)
+            time.sleep(40)
             p = p - 1
             if(p == 0):
                 print("重试五十次仍失败，请检查代码！")

@@ -80,7 +80,7 @@ def work():
             sign.click()
         time.sleep(1)
         # huaxiashuyu 2
-        wd.get("https://www.huaxiashuyu.com/user-2/")
+        wd.get("https://www.huaxiashuyu.com/user/")
         try:
             print("try to close ad for twice click")
             close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
@@ -165,7 +165,7 @@ def work():
         time.sleep(1)
         print("ios已签到2")
         # huaxiashuyu 3
-        wd.get("https://www.huaxiashuyu.com/user-2/")
+        wd.get("https://www.huaxiashuyu.com/user/")
         try:
             print("try to close ad for twice click")
             close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
@@ -250,7 +250,7 @@ def work():
         time.sleep(1)
         print("ios已签到3")
         # huaxiashuyu 4
-        wd.get("https://www.huaxiashuyu.com/user-2/")
+        wd.get("https://www.huaxiashuyu.com/user/")
         try:
             print("try to close ad for twice click")
             close_ad = wd.find_element(By.XPATH,"/html/body/div[3]/div/div[1]/button")
@@ -697,7 +697,7 @@ def work():
             print("baiwan1 signed.")
 
 
-p = 50 # 设置失败重试次数
+p = 30 # 设置失败重试次数
 while(1):
     if(p == 0):
         exit()

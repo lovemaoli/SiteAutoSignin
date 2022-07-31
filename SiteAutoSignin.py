@@ -69,8 +69,7 @@ def work():
         menu.click()
         time.sleep(2)
         try:
-            sign2 = wd.find_element(By.XPATH,"/html/body/ins[2]/ins[1]/span//*[name()='svg']")
-            sign2.click()
+            wd.execute_script("var data=document.querySelector('body > ins:nth-child(3)').remove()")
             time.sleep(5)
             sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
             sign.click()
@@ -126,8 +125,7 @@ def work():
         menu.click()
         time.sleep(2)
         try:
-            sign2 = wd.find_element(By.XPATH,"/html/body/ins[2]/ins[1]/span//*[name()='svg']")
-            sign2.click()
+            wd.execute_script("var data=document.querySelector('body > ins:nth-child(3)').remove()")
             time.sleep(5)
             sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
             sign.click()
@@ -184,8 +182,7 @@ def work():
         menu.click()
         time.sleep(2)
         try:
-            sign2 = wd.find_element(By.XPATH,"/html/body/ins[2]/ins[1]/span//*[name()='svg']")
-            sign2.click()
+            wd.execute_script("var data=document.querySelector('body > ins:nth-child(3)').remove()")
             time.sleep(5)
             sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
             sign.click()
@@ -242,8 +239,7 @@ def work():
         menu.click()
         time.sleep(2)
         try:
-            sign2 = wd.find_element(By.XPATH,"/html/body/ins[2]/ins[1]/span//*[name()='svg']")
-            sign2.click()
+            wd.execute_script("var data=document.querySelector('body > ins:nth-child(3)').remove()")
             time.sleep(5)
             sign = wd.find_element(By.XPATH,'//*[@id="cao_widget_userinfo-5"]/div/div[1]/div[3]/button/i')
             sign.click()
@@ -619,7 +615,7 @@ def work():
             print("baiwan1 signed.")
 
 
-p = 50 # 设置失败重试次数
+p = 30  # 设置失败重试次数
 while(1):
     if(p == 0):
         exit()
